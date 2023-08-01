@@ -16,6 +16,7 @@ export const logo = "https://img.freepik.com/free-icon/youtube_318-246532.jpg";
 
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
+  { name: "UpliftMind", icon: <CodeIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
   { name: "ReactJS", icon: <CodeIcon /> },
   { name: "NextJS", icon: <CodeIcon /> },
