@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { Videos } from "./";
+import { Navbar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const SearchFeed = () => {
@@ -15,13 +15,21 @@ const SearchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-      <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "#fff" }}>
-        Search Results For:
-        <span style={{ color: "#ff302e" }}> {searchTerm}</span> Videos
-      </Typography>
-      <Videos videos={videos} />
-    </Box>
+    <>
+      <Navbar />
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          mb={2}
+          sx={{ color: "#fff" }}
+        >
+          Search Results For:
+          <span style={{ color: "#ff302e" }}> {searchTerm}</span> Videos
+        </Typography>
+        <Videos videos={videos} />
+      </Box>
+    </>
   );
 };
 

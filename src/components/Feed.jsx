@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Sidebar, Videos } from "./";
+import { Navbar, Sidebar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const Feed = () => {
@@ -14,38 +14,41 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
-      <Box
-        sx={{
-          height: { sx: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
-          px: { sx: 0, md: 2 },
-        }}
-      >
-        <Sidebar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-        <Typography
-          className="copyright"
-          variant="body2"
-          sx={{ mt: 1.5, color: "#fff" }}
+    <>
+      <Navbar />
+      <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+        <Box
+          sx={{
+            height: { sx: "auto", md: "92vh" },
+            borderRight: "1px solid #3d3d3d",
+            px: { sx: 0, md: 2 },
+          }}
         >
-          Copyright © 2022 Akhil Tyagi
-        </Typography>
-      </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-          sx={{ color: "#fff" }}
-        >
-          {selectedCategory} <span style={{ color: "#ff302e" }}>Videos</span>
-        </Typography>
-        <Videos videos={videos} />
-      </Box>
-    </Stack>
+          <Sidebar
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <Typography
+            className="copyright"
+            variant="body2"
+            sx={{ mt: 1.5, color: "#fff" }}
+          >
+            Copyright © 2022 Akhil Tyagi
+          </Typography>
+        </Box>
+        <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            mb={2}
+            sx={{ color: "#fff" }}
+          >
+            {selectedCategory} <span style={{ color: "#ff302e" }}>Videos</span>
+          </Typography>
+          <Videos videos={videos} />
+        </Box>
+      </Stack>
+    </>
   );
 };
 
