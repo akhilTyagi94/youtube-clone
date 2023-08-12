@@ -16,10 +16,10 @@ Youtopia is a cutting-edge video-sharing platform that brings the best of YouTub
 
 ## Installation
 
-**Clone the repository:** git clone https://github.com/yourusername/Youtopia.git
-**Navigate to the project directory:** cd Youtopia
-**Install dependencies:** npm install
-**Start the development server:** npm start
+1. **Clone the repository:** git clone https://github.com/akhilTyagi94/youtube-clone.git
+2. **Navigate to the project directory:** cd Youtopia
+3. **Install dependencies:** npm install
+4. **Start the development server:** npm start
 
 ## Usage
 
